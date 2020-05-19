@@ -1,0 +1,28 @@
+{
+  "name": "evaluating-news-article-with-nlp",
+  "version": "1.0.0",
+  "description": "Web tool to run Natural Language Processing on news articles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrabaturina/evaluating-news-article-with-nlp.git"
+  },
+  "keywords": [
+    "nlp",
+    "aylien"
+  ],
+  "author": "Alexandra Baturina <alexandra.v.baturina@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandrabaturina/evaluating-news-article-with-nlp/issues"
+  },
+  "homepage": "https://github.com/alexandrabaturina/evaluating-news-article-with-nlp#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
