@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     mode: 'production',
@@ -13,6 +12,10 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
@@ -21,6 +24,5 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new BundleAnalyzerPlugin()
     ]
 }
