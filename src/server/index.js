@@ -1,6 +1,11 @@
 // var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const AYLIENTextAPI = require("aylien_textapi");
+const textapi = new AYLIENTextAPI({
+    application_id: "YOUR_APP_ID",
+    application_key: "YOUR_APP_KEY"
+});
 
 const app = express()
 
