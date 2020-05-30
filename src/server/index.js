@@ -35,9 +35,27 @@ app.listen(PORT, function () {
     console.log(`Example app listening on port ${PORT}`)
 })
 
-app.get('/test', function (req, res) {
-    res.send({ text: "hi" })
-})
+
+
+// app.get('/test', function (req, res) {
+//     res.send({ text: "hi" })
+// })
+
+app.post('/api', function (req, res) {
+    textapi.classify({
+        'url': req.body.urlToAnalyze
+    }, function (error, textToAnalyze) {
+        if (error === null) {
+            textapi.sentiment({
+                'text': textToAnalyze
+            }, function (error, analysisResult) {
+                if (error === null) {
+                    res.send(analysisResult)
+                }
+            })
+        }
+    });
+});
 
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('src/client/views/index.html'))
