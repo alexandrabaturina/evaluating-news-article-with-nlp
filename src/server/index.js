@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
-const mockAPIResponse = require('./mockAPI.js');
+const PORT = 8081;
+
+// Env variable for protecting API key
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -10,13 +12,11 @@ const textapi = new AYLIENTextAPI({
     application_key: process.env.API_KEY
 });
 
-const PORT = 8081;
-
 // Require Express to run server and routes
 const app = express()
 
 /* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
+// Configure Express to use body-parser as middle-ware.
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -28,24 +28,19 @@ app.use(cors());
 // Start up an instance of app
 app.use(express.static('dist'))
 
-// console.log(__dirname)
-
-// designates what port the app will listen to for incoming requests
+// Designate what port to listen for requests
 app.listen(PORT, function () {
-    console.log(`Example app listening on port ${PORT}`)
+    console.log(`App listening on port ${PORT}`)
 })
 
-
-
-// app.get('/test', function (req, res) {
-//     res.send({ text: "hi" })
-// })
-
+// API call
 app.post('/api', function (req, res) {
+    // Get text to analyze
     textapi.classify({
         'url': req.body.urlToAnalyze
     }, function (error, textToAnalyze) {
         if (error === null) {
+            // Sentiment analysis
             textapi.sentiment({
                 'text': textToAnalyze
             }, function (error, analysisResult) {
@@ -60,6 +55,3 @@ app.post('/api', function (req, res) {
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('src/client/views/index.html'))
 })
-
-
-
