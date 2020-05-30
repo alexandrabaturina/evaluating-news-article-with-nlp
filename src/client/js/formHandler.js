@@ -15,8 +15,17 @@ const handleSubmit = async (event) => {
                 'Content-Type': 'application/json'
             }
         });
-        const json = await apiQuery.json();
-        const sentimentAnalysis = JSON.stringify(json);
+        const sentimentAnalysis = await apiQuery.json();
+        console.log(sentimentAnalysis);
+
+        // Update UI
+        const results = document.querySelector('#results');
+
+        document.querySelector('#polarity').innerText = `Polarity: ${sentimentAnalysis.polarity}`;
+        document.querySelector('#subjectivity').innerText = `Subjectivity: ${sentimentAnalysis.subjectivity}`;
+        document.querySelector('#polarity-confidence').innerText = `Polarity Confidence: ${sentimentAnalysis.polarity_confidence}`;
+        document.querySelector('#subjectivity-confidence').innerText = `Subjectivity Confidence: ${sentimentAnalysis.subjectivity_confidence}`;
+
     }
     catch (error) {
         console.log("error", error);
