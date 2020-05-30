@@ -42,7 +42,7 @@ app.post('/api', function (req, res) {
         if (error === null) {
             // Sentiment analysis
             textapi.sentiment({
-                'text': textToAnalyze
+                'text': textToAnalyze.text
             }, function (error, analysisResult) {
                 if (error === null) {
                     res.send(analysisResult)
