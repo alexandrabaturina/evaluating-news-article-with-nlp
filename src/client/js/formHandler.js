@@ -1,11 +1,30 @@
+const divPolarity = document.getElementById('polarity');
+const divSubjectivity = document.getElementById('subjectivity');
+const divPolarityConfidence = document.getElementById('polarity-confidence');
+const divSubjectivityConfidence = document.getElementById('subjectivity-confidence');
+const results = document.getElementById('results');
+
+
 const handleSubmit = async (event) => {
     event.preventDefault();
 
+    results.innerText = '';
+    divPolarity.innerText = '';
+    divSubjectivity.innerText = '';
+    divPolarityConfidence.innerText = '';
+    divSubjectivityConfidence.innerText = '';
+
     // check what text was put into the form field
     let formText = document.getElementById('urlToAnalyze').value;
+    const urlError = document.querySelector("#urlError");
+    urlError.innerText = '';
 
-    console.log(`You're trying to analyze ${formText}`);
-    console.log(`Regex test results: ${Client.checkForURL(formText)}`);
+    if (!(Client.checkForURL(formText))) {
+
+        urlError.innerText = 'The specified URL is not valid. Pleasy try again.';
+        console.error(`You're trying to analyze ${formText}. The specified URL is not valid.`);
+        return
+    }
 
     try {
         const apiQuery = await fetch('http://localhost:8081/api', {
@@ -16,15 +35,9 @@ const handleSubmit = async (event) => {
             }
         });
         const sentimentAnalysis = await apiQuery.json();
-        console.log(sentimentAnalysis);
 
         // Update UI
-        const results = document.querySelector('#results');
-
-        const divPolarity = document.querySelector('#polarity');
-        const divSubjectivity = document.querySelector('#subjectivity');
-        const divPolarityConfidence = document.querySelector('#polarity-confidence');
-        const divSubjectivityConfidence = document.querySelector('#subjectivity-confidence');
+        results.innerText = 'Analysis Results:';
 
         const {
             polarity,
