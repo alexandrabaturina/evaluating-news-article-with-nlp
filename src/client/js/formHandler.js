@@ -21,10 +21,22 @@ const handleSubmit = async (event) => {
         // Update UI
         const results = document.querySelector('#results');
 
-        document.querySelector('#polarity').innerText = `Polarity: ${sentimentAnalysis.polarity}`;
-        document.querySelector('#subjectivity').innerText = `Subjectivity: ${sentimentAnalysis.subjectivity}`;
-        document.querySelector('#polarity-confidence').innerText = `Polarity Confidence: ${sentimentAnalysis.polarity_confidence}`;
-        document.querySelector('#subjectivity-confidence').innerText = `Subjectivity Confidence: ${sentimentAnalysis.subjectivity_confidence}`;
+        const divPolarity = document.querySelector('#polarity');
+        const divSubjectivity = document.querySelector('#subjectivity');
+        const divPolarityConfidence = document.querySelector('#polarity-confidence');
+        const divSubjectivityConfidence = document.querySelector('#subjectivity-confidence');
+
+        const {
+            polarity,
+            subjectivity,
+            polarity_confidence: polarityConfidence,
+            subjectivity_confidence: subjectivityConfidence
+        } = sentimentAnalysis;
+
+        divPolarity.innerText = `Polarity: ${polarity}`;
+        divSubjectivity.innerText = `Subjectivity: ${subjectivity}`;
+        divPolarityConfidence.innerText = `Polarity Confidence: ${polarityConfidence}`;
+        divSubjectivityConfidence.innerText = `Subjectivity Confidence: ${subjectivityConfidence}`;
 
     }
     catch (error) {
