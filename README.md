@@ -12,6 +12,13 @@ The goal of this project is to practice with:
 * Service workers
 * Using APIs and creating requests to external urls
 ## Features
+Based on url entered by user, the app uses [AYLIEN Text Analysis API](https://docs.aylien.com/) to analyze article by four parameters.
+* Polarity
+* Subjectivity
+* Polarity confidence
+* Subjectivity confidence
+
+The regex-based url validation is implemented.
 ## Dev Dependencies
 Cool tech stuff used in this project.
 ## Getting Started
