@@ -36,6 +36,11 @@ const handleSubmit = async (event) => {
         });
         const sentimentAnalysis = await apiQuery.json();
 
+        if (!(jsonCheck(sentimentAnalysis))) {
+            console.error('JSON object is invalid.');
+            return
+        }
+
         // Update UI
         results.innerText = 'Analysis Results:';
 
@@ -58,8 +63,16 @@ const handleSubmit = async (event) => {
 
 }
 const submitRequest = document.querySelector('#submitRequest');
-submitRequest.addEventListener('click', event => {
-    handleSubmit(event);
-})
+if (submitRequest) {
+    submitRequest.addEventListener('click', event => {
+        handleSubmit(event);
+    })
+}
+
+// function to be able to test this script
+const jsonCheck = (json) => {
+    return ('polarity' in json) && ('subjectivity' in json) && ('polarity_confidence' in json) && ('subjectivity_confidence' in json)
+}
 
 export { handleSubmit }
+export { jsonCheck }
