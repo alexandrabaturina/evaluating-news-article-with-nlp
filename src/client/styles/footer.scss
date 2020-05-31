@@ -1,5 +1,10 @@
+$font-color: #fefafa;
+$background-color: #252525;
+
 footer {
-    background: #252525;
-    color: #e7e7e7;
-    height: 70px;
+    background-color: $background-color;
+    color: $font-color;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
 }

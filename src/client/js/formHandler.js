@@ -20,7 +20,7 @@ const handleSubmit = async (event) => {
     urlError.innerText = '';
 
     if (!(Client.checkForURL(formText))) {
-
+        urlError.classList.add('error-message');
         urlError.innerText = 'The specified URL is not valid. Pleasy try again.';
         console.error(`You're trying to analyze ${formText}. The specified URL is not valid.`);
         return
@@ -42,7 +42,7 @@ const handleSubmit = async (event) => {
         }
 
         // Update UI
-        results.innerText = 'Analysis Results:';
+        results.innerText = 'Analysis Results';
 
         const {
             polarity,
@@ -51,10 +51,10 @@ const handleSubmit = async (event) => {
             subjectivity_confidence: subjectivityConfidence
         } = sentimentAnalysis;
 
-        divPolarity.innerText = `Polarity: ${polarity}`;
-        divSubjectivity.innerText = `Subjectivity: ${subjectivity}`;
-        divPolarityConfidence.innerText = `Polarity Confidence: ${polarityConfidence}`;
-        divSubjectivityConfidence.innerText = `Subjectivity Confidence: ${subjectivityConfidence}`;
+        divPolarity.innerText += `Polarity: ${polarity}`;
+        divSubjectivity.innerText += `Subjectivity: ${subjectivity}`;
+        divPolarityConfidence.innerText += `Polarity Confidence: ${polarityConfidence}`;
+        divSubjectivityConfidence.innerText += `Subjectivity Confidence: ${subjectivityConfidence}`;
 
     }
     catch (error) {

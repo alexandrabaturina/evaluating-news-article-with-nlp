@@ -1,5 +1,11 @@
+$font-color: #fefafa;
+$primary-color: #252525;
+
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
+    background-color: $primary-color;
+    color: $font-color;
+    height: 70px;
+    font-size: 3em;
+    padding: 10px 0 0 30px;
+    font-weight: 700;
 }

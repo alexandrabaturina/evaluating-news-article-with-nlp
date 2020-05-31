@@ -1,7 +1,35 @@
+$border-color: #545454;
+$primary-color: #fefafa;
+$error-message: #d50102;
+$background-color: #252525;
+$primary-font-size: 1.3em;
+
+
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
     padding: 40px;
+}
+
+.error-message {
+    color: $error-message;
+    font-weight: 600;
+}
+
+#submitRequest {
+    width: 30%;
+    align-self: center;
+    color: $primary-color;
+    border: none;
+    background-color: $background-color;
+    border-radius: 3px;
+    justify-self: center;
+    padding: 5px 0;
+    font-weight: 600;
+
 }
 
 input {
@@ -9,4 +37,23 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+}
+
+#results {
+    align-self: start;
+    font-size: $primary-font-size;
+}
+
+#results,
+#polarity,
+#subjectivity,
+#polarity-confidence,
+#subjectivity-confidence {
+    padding: 5px 0;
+    font-size: $primary-font-size;
+}
+
+#results {
+    font-weight: 600;
+    text-decoration: underline;
 }
