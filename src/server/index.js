@@ -53,5 +53,5 @@ app.post('/api', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('index.html'))
 })
