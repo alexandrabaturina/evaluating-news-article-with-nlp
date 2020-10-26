@@ -1,8 +1,6 @@
-# Evaluating News Articles With NLP
+# FEND Project #4: Evaluating News Articles With NLP
 ## Overview
-**Evaluating News Articles with NLP** is a web tool to run [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) on news articles or blog posts.
-
-The app is built as forth project of Udacity [Front End Web Developer nanodegree program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011).
+**Evaluating News Articles with NLP** is the fourth project of Udacity [Front End Web Developer](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011) nanodegree program. It requires to build a web tool to run [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) on news articles or blog posts.
 
 The goal of this project is to practice with:
 * Setting up [Webpack](https://webpack.js.org/guides/getting-started/)
@@ -13,21 +11,20 @@ The goal of this project is to practice with:
 * Using APIs and creating requests to external urls
 * Using [Jest](https://jestjs.io/docs/en/getting-started)
 ## Features
-Based on url entered by user, the app uses [AYLIEN Text Analysis API](https://docs.aylien.com/) to analyze article by four parameters.
-* Polarity
-* Subjectivity
-* Polarity confidence
-* Subjectivity confidence
-
-The regex-based url validation is implemented.
+* Based on URL entered by user, the app uses [AYLIEN Text Analysis API](https://docs.aylien.com/) to analyze article by four parameters:
+  * Polarity
+  * Subjectivity
+  * Polarity confidence
+  * Subjectivity confidence
+* The regex-based URL validation is implemented.
 ## Getting Started
 ### Prerequisites
 1. Download Node.js from [here](https://nodejs.org/en/).
 2. Install the following packages using NPM.
 ```sh
-$ npm install express
-$ npm install cors
-$ npm install body-parser
+npm install express
+npm install cors
+npm install body-parser
 ```
 3. Get AYLIEN Text Analysis API key [here](https://developer.aylien.com/signup).
 4. Clone this repo.
@@ -40,22 +37,22 @@ API_KEY=ENTER_YOUR_KEY_HERE
 ```
 ### Running
 To run the app locally, ```cd``` into project directory.
-To run tests, use the following command.
-```sh
-$ npm run test
+To run tests, use the following command:
 ```
-To run the **development mode**, use the following command.
-```sh
-$ npm run build-dev
+npm run test
 ```
-To run the app in **production mode**,
+To run the app in **development mode**, use the following command:
+```
+npm run build-dev
+```
+To run the app in **production mode**:
 1. Build the ```dist``` folder.
-```sh
-$ npm run build-prod
+```
+npm run build-prod
 ```
 2. Start the server.
-```sh
-$ npm run start
+```
+npm run start
 ```
 3. Open ```localhost:8081``` in your browser.
 
