@@ -1,5 +1,6 @@
 $border-color: #545454;
 $primary-color: #fefafa;
+$secondary-color: #e4b04a;
 $error-message: #d50102;
 $background-color: #252525;
 $primary-font-size: 1.3em;
@@ -22,7 +23,7 @@ form {
 #submitRequest {
     width: 30%;
     align-self: center;
-    color: $primary-color;
+    color: $secondary-color;
     border: none;
     background-color: $background-color;
     border-radius: 3px;
@@ -39,9 +40,17 @@ input {
     margin: 10px 0;
 }
 
-#results {
-    align-self: start;
+.results-style {
+    color: $background-color;
     font-size: $primary-font-size;
+    margin-top: 20px;
+    background-color: $secondary-color;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#results {
+    text-decoration: underline;
 }
 
 #results,
@@ -50,10 +59,12 @@ input {
 #polarity-confidence,
 #subjectivity-confidence {
     padding: 5px 0;
-    font-size: $primary-font-size;
 }
 
-#results {
-    font-weight: 600;
-    text-decoration: underline;
+.strong {
+    font-weight: 800;
+}
+
+.foo {
+    color: #963543;
 }

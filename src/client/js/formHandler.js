@@ -3,9 +3,11 @@ const divSubjectivity = document.getElementById('subjectivity');
 const divPolarityConfidence = document.getElementById('polarity-confidence');
 const divSubjectivityConfidence = document.getElementById('subjectivity-confidence');
 const results = document.getElementById('results');
+const divAnalysis = document.getElementById('analysis');
 
 
 const handleSubmit = async (event) => {
+
     event.preventDefault();
 
     results.innerText = '';
@@ -42,7 +44,7 @@ const handleSubmit = async (event) => {
         }
 
         // Update UI
-        results.innerText = 'Analysis Results';
+        results.innerHTML = `<i class='strong'>ANALYSIS RESULTS</i>`;
 
         const {
             polarity,
@@ -51,10 +53,15 @@ const handleSubmit = async (event) => {
             subjectivity_confidence: subjectivityConfidence
         } = sentimentAnalysis;
 
-        divPolarity.innerText += `Polarity: ${polarity}`;
-        divSubjectivity.innerText += `Subjectivity: ${subjectivity}`;
-        divPolarityConfidence.innerText += `Polarity Confidence: ${polarityConfidence}`;
-        divSubjectivityConfidence.innerText += `Subjectivity Confidence: ${subjectivityConfidence}`;
+        divPolarity.innerHTML +=
+            `<i class='strong'>Polarity:</i> ${polarity} `;
+        divSubjectivity.innerHTML +=
+            `<i class='strong'>Subjectivity:</i> ${subjectivity} `;
+        divPolarityConfidence.innerHTML +=
+            `<i class='strong'> Polarity Confidence:</i> ${polarityConfidence} `;
+        divSubjectivityConfidence.innerHTML +=
+            `<i class='strong'> Subjectivity Confidence:</i> ${subjectivityConfidence} `;
+        divAnalysis.classList.add('results-style');
 
     }
     catch (error) {
