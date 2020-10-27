@@ -17,6 +17,13 @@ The goal of this project is to practice with:
   * Polarity confidence
   * Subjectivity confidence
 * The regex-based URL validation is implemented.
+## Dev Dependencies
+Cool tech stuff used in this project:
+* Node.js
+* Express framework
+* Node.js packages:
+  * cors
+  * body-parser
 ## Getting Started
 ### Prerequisites
 1. Download Node.js from [here](https://nodejs.org/en/).
