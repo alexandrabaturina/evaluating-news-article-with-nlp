@@ -8,7 +8,7 @@ The goal of this project is to practice with:
 * Webpack loaders and plugins
 * Creating layouts and page design
 * Service workers
-* Using APIs and creating requests to external urls
+* Using APIs and creating requests to external URLs
 * Using [Jest](https://jestjs.io/docs/en/getting-started)
 ## Features
 * Based on URL entered by user, the app uses [AYLIEN Text Analysis API](https://docs.aylien.com/) to analyze article by four parameters:
@@ -17,7 +17,9 @@ The goal of this project is to practice with:
   * Polarity confidence
   * Subjectivity confidence
 * The regex-based URL validation is implemented.
-## Dev Dependencies
+
+![image](https://user-images.githubusercontent.com/53233637/97345745-af6f8c80-1847-11eb-8b95-71c64b22a204.png)
+## Dependencies
 Cool tech stuff used in this project:
 * Node.js
 * Express framework
@@ -27,11 +29,9 @@ Cool tech stuff used in this project:
 ## Getting Started
 ### Prerequisites
 1. Download Node.js from [here](https://nodejs.org/en/).
-2. Install the following packages using NPM.
-```sh
-npm install express
-npm install cors
-npm install body-parser
+2. Install the dependencies using NPM.
+```
+npm install
 ```
 3. Get AYLIEN Text Analysis API key [here](https://developer.aylien.com/signup).
 4. Clone this repo.
@@ -42,16 +42,22 @@ npm install body-parser
 API_ID=ENTER_YOUR_ID_HERE
 API_KEY=ENTER_YOUR_KEY_HERE
 ```
-### Running
-To run the app locally, ```cd``` into project directory.
-To run tests, use the following command:
+### Running Tests
+To run tests, from project directory run the following command:
 ```
 npm run test
 ```
-To run the app in **development mode**, use the following command:
+### Running in Development Mode
+1. From project directory, run the following command:
 ```
 npm run build-dev
 ```
+2. Run run the server.
+```
+npm start
+```
+3. Access ```http://127.0.0.1:8080/``` in your browser.
+### Running in Production Mode
 To run the app in **production mode**:
 1. Build the ```dist``` folder.
 ```
@@ -61,7 +67,7 @@ npm run build-prod
 ```
 npm run start
 ```
-3. Open ```localhost:8081``` in your browser.
+3. Access ```http://127.0.0.1:8080/``` in your browser.
 
 ## Authors
 Alexandra Baturina
